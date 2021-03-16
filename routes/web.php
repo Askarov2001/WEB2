@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Song;
+
+use App\Http\Controllers\SongController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +29,13 @@ Route::get('/user', function () {
 Route::get('/home', function () {
     return "home";
 });
+
+Route::get('song/add', function () {
+    DB::table('songs')->insert([
+        'name'=>'Roses-Remix',
+        'singer'=>'Imanbek',
+        'year'=>'2020'
+    ]);
+});
+
+Route::get('song',[SongController::class, 'index']);
