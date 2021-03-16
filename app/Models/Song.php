@@ -10,4 +10,6 @@ class Song extends Model
     use HasFactory;
 
     protected $table = "songs";
+
+    protected $fillable = ['name','singer','year'];
 }

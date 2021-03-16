@@ -39,3 +39,9 @@ Route::get('song/add', function () {
 });
 
 Route::get('song',[SongController::class, 'index']);
+Route::get('song/create', function(){
+    return view('song.create');
+});
+
+
+Route::post('song/create',[SongController::class, 'store'])->name('add-song');
