@@ -23,4 +23,13 @@ class SongController extends Controller
         ]);
         return back();
     }
+
+    public function get_song($id){
+        $song = Song::find($id);
+
+        if($song == null)
+        return response(['message' => 'song not found'], 404);
+
+        return view('song.detail')->with(['song' => $song]);
+    }
 }

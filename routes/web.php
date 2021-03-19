@@ -45,3 +45,5 @@ Route::get('song/create', function(){
 
 
 Route::post('song/create',[SongController::class, 'store'])->name('add-song');
+
+Route::get('song/{id}', [SongController::class, 'get_song']);
